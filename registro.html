@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>CineTI - Registro</title>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a style="text-decoration: none;" class="h2 text-white" href="index.html">CineTI</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+      </ul>
+      <div class="form-inline my-2 my-lg-0">
+        <a href="login.html"><button class="btn btn-light m-2 my-sm-0" type="submit">Iniciar Sesión</button></a>
+      </div>
+    </div>
+  </nav>
+  <div class="container" style="height: 100vh;">
+    <div style=" position: absolute; top: 50%; left: 50%; height: 30%; width: 50%; margin: -15% 0 0 -25%;">
+        <div class="row">
+            <h2 style="margin-left: auto; margin-right: auto;">REGISTRO</h2>
+        </div>
+        <div class="row">
+            <form class="w-50 m-auto" id="formRegistro"> <!-- poner ruta de página de cartelera -->
+                <div class="form-group">
+                    <input type="text" required class="form-control bg-light" id="inputEmail4" placeholder="NOMBRES">
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <!-- <input type="text" required class="form-control bg-light" id="inputAddress" placeholder="SEXO"> -->
+                        <select class="custom-select bg-light" required id="inputGroupSelect03">
+                            <option value="" selected>SEXO</option>
+                            <option value="M">MASCULINO</option>
+                            <option value="F">FEMENINO</option>
+                          </select>
+                      </div>
+                      <div class="form-group col-md-6">
+                        <input type="date" required class="form-control bg-light" id="inputAddress2" placeholder="F. NACIMIENTO">
+                      </div>
+                </div>
+    
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <input type="text" required class="form-control bg-light" id="inputAddress" placeholder="PAIS">
+                      </div>
+                      <div class="form-group col-md-6">
+                        <input type="text" required class="form-control bg-light" id="inputAddress2" placeholder="CIUDAD">
+                      </div>
+                </div>
+                <div class="form-group">
+                    <input type="email" required class="form-control bg-light" id="emailusuario" placeholder="EMAIL">
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <input type="text" required class="form-control bg-light" id="password" placeholder="CONTRASEÑA">
+                      </div>
+                      <div class="form-group col-md-6">
+                        <input type="text" required  class="form-control bg-light" id="passwordconfirm" placeholder="CONFIRMAR CONTRASEÑA">
+                      </div>
+                </div>
+                <div class="form-group">
+                    <input type="text" required class="form-control bg-light" id="inputEmail4" placeholder="NOMBRE DE USUARIO">
+                </div>
+                <div class="form-group row justify-content-md-center">
+                    <button type="submit" class="btn btn-outline-dark w-50 font-weight-bold">Registrarse</button>
+                </div>
+              </form>
+        </div>
+    </div>
+    
+  </div>
+</body>
+</html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$("#formRegistro").submit(function(e) {
+
+    e.preventDefault(); // avoid to execute the actual submit of the form.
+    if($("#passwordconfirm").val() != $("#password").val()){
+        return alert("Las contraseñas no coinciden");
+    }
+    else{
+       var usuario =  { 'email': $("#emailusuario").val() , 'password': $("#password").val()}
+       localStorage.setItem('usuario', JSON.stringify(usuario));
+       window.location.href = 'login.html'
+    }
+
+});
+</script>

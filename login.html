@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>CineTI - Sing in</title>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="h2 text-white" href="/index.html">CineTI</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+      </ul>
+      <div class="form-inline my-2 my-lg-0">
+        <a href="registro.html"><button class="btn btn-light m-2 my-sm-0" type="submit">Registrarse</button></a>
+      </div>
+    </div>
+  </nav>
+  <div class="container" style="height: 100vh; position: relative;">
+    <div class="row" style=" position: absolute; top: 50%; left: 50%; height: 30%; width: 50%; margin: -15% 0 0 -25%;">
+      <form class="w-50 m-auto border" id="formLogin"><!-- poner ruta de página de cartelera -->
+        <div class="p-3">
+          <div class="form-group">
+            <h3>Iniciar Sesión</h3>
+          </div>
+          <div class="form-group">
+            <input type="email" required class="form-control bg-light" id="emailLogin" aria-describedby="emailHelp" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <input type="password" required class="form-control bg-light" id="passwordLogin" placeholder="Contraseña">
+          </div>
+          <div class="form-group justify-content-md-center">
+           <a href="/index.html"><button type="submit" class="btn btn-outline-dark w-100 font-weight-bold">Iniciar Sesión</button></a> 
+          </div>
+        </div>  
+      </form>
+    </div>
+  </div>
+</body>
+</html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+  $("#formLogin").submit(function(e) {
+    var usuario = localStorage.getItem('usuario'); //local storage donde se obtiene el usuario y contraseña
+    usuario = JSON.parse(usuario);
+    e.preventDefault(); 
+    if($("#emailLogin").val() == usuario.email && $("#passwordLogin").val() == usuario.password){
+      window.location.href = 'registro.html'; //cambiar por ruta de cartelera
+    }
+    else{
+      return alert("Usuario o contraseña incorrectos");
+    }
+  });
+</script>

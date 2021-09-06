@@ -1,0 +1,40 @@
+
+body{
+    background-color: #ffffff;
+    font-family:Arial, Helvetica, sans-serif;
+}
+.todoxd{
+    display: flex;
+    padding:  20px 8%;
+}
+.pelicula{
+    width: 200px;
+    
+}
+.psinopsis{
+    font-family: calibri,Arial, Helvetica, sans-serif;
+    text-align: justify;
+    font-size: 17px;
+}
+.seccion2{
+    margin-inline:14px;
+}
+.trailer{
+    margin-inline: 100px;
+}
+.precio{
+    margin-top: 10px;
+    color: rgb(87, 86, 86);
+    border:1px solid #bdbdbd;
+    border-radius: 5px;
+    height: 40px;
+   --padding-top: 2px;
+    text-align: center;
+    font-size: 30px;
+    background-color: rgba(0, 0, 0, 0.075);
+}
+.detallepeli{
+    font-family:Calibri, 'Trebuchet MS', sans-serif;
+    margin-block: 25px;
+    font-size: 19px;
+}

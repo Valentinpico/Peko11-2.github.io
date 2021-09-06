@@ -1,0 +1,33 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.footer {
+  font-family: monospace;
+  padding-top: 20px;
+  margin-top: 30px;
+  padding-inline: 20%;
+  justify-content: space-between;
+  display: flex;
+  background-color: rgb(36, 36, 36);
+}
+.subtitleFooter {
+  color: #ffffff;
+}
+.h2.text-white:hover{
+  text-decoration: none;
+}
+.letrasFooter {
+  color: rgb(114, 114, 114);
+  margin-block:20px;
+  display: block;
+}
+.letrasFooter:hover {
+  color: white;
+  text-decoration: none;
+}
+.logo{
+  text-decoration: none;
+}

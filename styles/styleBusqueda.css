@@ -1,0 +1,40 @@
+.Busqueda1{
+  padding-inline: 5%;
+  display: flex;
+  padding-block: 30px ;
+  border-bottom: 1px dotted black;
+}
+h2{
+  margin-top: 25px;
+  margin-left: 65px;
+}
+.imagenPeli{
+  width: 200px;
+  margin-inline-end: 30px;
+}
+.detallePeli{
+  width: 25%;
+}
+.detallePeli_2{
+  margin-inline: 90px;
+  width: 50%;
+}
+.horario{
+  display:flex  ;
+}
+.horas{
+  background-color: rgb(235, 232, 232);
+  margin-inline: 10px;
+  padding-inline: 5px;
+  border-radius: 5px;
+  border:1px solid black;
+}
+.tituloPeli{
+  font-size: 30px;
+  text-decoration: none;
+  color: black;
+}
+.tituloPeli:hover{
+  text-decoration: none;
+  color: black;
+}
